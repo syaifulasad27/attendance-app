@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "68f0f9d5-d672-43cc-89f3-aa87f2fb1fca",
+		"name": "Attendance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14810687"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jhon\",\r\n  \"email\": \"jhon@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"jhon@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjAyNDA4MWQ1Y2JkM2JlYTBiNzNiNiIsImlhdCI6MTczOTU5Njg4NywiZXhwIjoxNzM5NjgzMjg3fQ.BYorPni4YywmrhEEAYmDVjMrxhZN4H2x9EuEl3cRU10",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"photoUrl\": \"https://example.com/photoNew.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/attendance/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"attendance",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjAyNDA4MWQ1Y2JkM2JlYTBiNzNiNiIsImlhdCI6MTczOTU5NzgxNywiZXhwIjoxNzM5Njg0MjE3fQ.q-WkSswWb4weTWMURDZPZ8TTPdt326p3ur5dADG0Bkw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/attendance/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"attendance",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjAyNDA4MWQ1Y2JkM2JlYTBiNzNiNiIsImlhdCI6MTczOTU5NzgxNywiZXhwIjoxNzM5Njg0MjE3fQ.q-WkSswWb4weTWMURDZPZ8TTPdt326p3ur5dADG0Bkw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n  \"status\": \"reviewed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/attendance/update/67b0247c1d5cbd3bea0b73bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"attendance",
+						"update",
+						"67b0247c1d5cbd3bea0b73bb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
